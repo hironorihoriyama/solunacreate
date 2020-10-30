@@ -1,0 +1,33 @@
+// mediaquery
+$bp-smartphone-portrait: 520px;
+$bp-tablet-portrait: 768px;
+$bp-laptop_s: 1000px;
+$bp-tablet-landscape: 1024px;
+$bp-laptop_m: 1366px;
+$bp-laptop_l: 1920px;
+$breakpoints:(
+  xs: $bp-smartphone-portrait,
+  sm: $bp-tablet-portrait,
+  md: $bp-tablet-landscape,
+  lg: $bp-laptop_m,
+  xl: $bp-laptop_l
+) !default;
+// 小さいスクリーン優先のmediaquery
+@mixin mediaQuery-up($breakpoint) {
+  @media ( min-width: #{map-get($breakpoints, $breakpoint)} ) {
+    @content;
+  }
+}
+// 大きいスクリーン優先のmediaquery
+@mixin mediaQuery-down($breakpoint) {
+  @media ( max-width: #{map-get($breakpoints, $breakpoint)} ) {
+    @content;
+  }
+}
+
+//webfont
+@mixin wf-ten-mincho() {
+  font-family: ten-mincho, serif;
+  font-style: normal;
+  font-weight: 400;
+}
