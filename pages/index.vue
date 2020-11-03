@@ -1,161 +1,79 @@
 <template>
-  <div
-    class="top_container"
-    v-bind:style="styleObject"
-  >
-    <div v-swiper:mySwiper="swiperOption">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide swiper-slide_01" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_02" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_03" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_04" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_05" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_06" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_07" v-bind:style="styleObject"></div>
-        <div class="swiper-slide swiper-slide_08" v-bind:style="styleObject"></div>
-      </div>
-    </div>
-    <div class="top_main">
-      <Pagettl class="top_main_pagettl-l" />
-      <Sns class="top_main_links-l" />
-      <Button />
-    </div>
-    <Info class="top_info" />
-    <Links class="top_links" />
-    <Address class="top_right" />
-    <Copyright class="top_bottom" />
+  <div class="top">
+    <Swiper />
+    <TopMnu />
+    <Clm>
+      <p class="top_abtxt">
+        ここ奈良の地では、日本人の原点を感じる風景があります。<br>
+        無数の生命が響き合う生態系や、緑あふれる公園、社寺、古墳があります。<br>
+        また、たくさんの人生の先達のストーリーが眠っています。<br>
+        人生の節目で、これまでの人生を振り返り自分や子孫の将来について考えることができる地、奈良。<br>
+        その奈良という地で、さまざまな対話の場を通じて自分の軸をもつお手伝いをします。
+      </p>
+      <Btn class="top_abbtn" :wh="true"><nuxt-link to="/about">ABOUT US</nuxt-link></Btn>
+      <Nw />
+    </Clm>
+    <AtlBnr />
+    <Clm>
+      <p class="top_cmpttl">COMPANY</p>
+      <table class="top_cmptxt">
+        <tr><td>商号</td><td>ソルナ・クリエイト株式会社</td></tr>
+        <tr><td>所在地</td><td>〒631-0823	奈良市西大寺国見町1丁目5 西大寺団地2号棟205</td></tr>
+        <tr><td>連絡先</td><td>電話：0742-55-8998　/　FAX：0742-77-6059</td></tr>
+        <tr><td>設立年月日</td><td>2015年5月25日</td></tr>
+        <tr><td>資本金</td><td>500万円</td></tr>
+        <tr><td>役員</td><td>代表取締役　大川 健</td></tr>
+        <tr><td></td><td>取締役　大川 郁子</td></tr>
+        <tr><td>経営理念</td><td>コーチングとコンサルティングで地域の未来づくりに貢献します。</td></tr>
+        <tr><td>沿革</td><td>2007年4月　コーチング・ソルナ（主宰 大川郁子）を創業</td></tr>
+        <tr><td></td><td>2015年5月　コンサルティング部門を加えソルナ・クリエイトとして法人化</td></tr>
+        <tr><td>事業内容</td><td>・個人に対するコーチング（面談、スカイプなどにより行います）</td></tr>
+        <tr><td></td><td>・コーチング技術を活用した研修の企画及び講師の派遣</td></tr>
+        <tr><td></td><td>・地域政策コンサルタント</td></tr>
+        <tr><td>取引銀行</td><td>南都銀行　県庁出張所</td></tr>
+        <tr><td>業務提携</td><td>株式会社コミュニケーション・ファンデーション</td></tr>
+        <tr><td></td><td>HRリスペクト株式会社</td></tr>
+      </table>
+      <Btn class="top_cmpbtn" :wh="true"><nuxt-link to="/about">CONTACT</nuxt-link></Btn>
+    </Clm>
+    <Footer />
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
-
 export default {
-  components: {
-    Swiper,
-    SwiperSlide
-  },
-  directives: {
-    swiper: directive
-  },
-  data() {
-    let innerHeight = 0
-    if(process.browser) {
-      innerHeight = window.innerHeight
-    }
-    return {
-      styleObject: {
-        minHeight: innerHeight + 'px'
-      },
-      swiperOption: {
-        speed: 1000,
-        loop: true,
-        effect: 'fade',
-        autoplay: {
-          delay: 5000,
-        }
-      },
-    }
-  },
-  methods: {
-    handleResize: function() {
-      this.styleObject.minHeight = window.innerHeight + 'px'
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize)
+  data: function() {
+    return {}
   },
 }
 </script>
 
-<style　lang="sass">
+<style lang="sass">
 @import '~assets/scss/_variable.scss';
 @import '~assets/scss/_mixin.scss';
-.swiper
-  &-container
-    z-index: -1
-    position: absolute
-    width: 100%
-    height: 100%
-  &-slide
-    background-size: cover
-    background-position: center
-    &_01
-      background-image: url('~@/assets/img/kv.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-sp.jpg')
-    &_02
-      background-image: url('~@/assets/img/kv2.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv2-sp.jpg')
-    &_03
-      background-image: url('~@/assets/img/kv-M3_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-M3_001-sp.jpg')
-    &_04
-      background-image: url('~@/assets/img/kv-M5_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-M5_001-sp.jpg')
-    &_05
-      background-image: url('~@/assets/img/kv-L3_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-L3_001-sp.jpg')
-    &_06
-      background-image: url('~@/assets/img/kv-L5_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-L5_001-sp.jpg')
-    &_07
-      background-image: url('~@/assets/img/kv-L7_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-L7_001-sp.jpg')
-    &_08
-      background-image: url('~@/assets/img/kv-L7_M3_001-pc.jpg')
-      @include mediaQuery-down(md)
-        background-image: url('~@/assets/img/kv-L7_M3_001-sp.jpg')
-.top
-  &_container
-    margin: 0 auto
-    display: flex
-    justify-content: center
-    align-items: center
-    position: relative
-  &_main
-    text-align: center
-    &_pagettl
-      &-l
-        padding-top: 10rem
-        @include mediaQuery-down(md)
-          padding-top: 30rem
-    &_links
-      &-l
-        margin-top: 2rem
-        margin-bottom: 3rem
-  &_info
-    position: absolute
-    top: $yend
-    left: $xend
-  &_links
-    font-size: $fs-small
-    position: absolute
-    left: -2rem
-    transform: rotate(90deg)
-    @include mediaQuery-down(md)
-      display: none
-  &_right
-    position: absolute
-    right: -10rem
-    transform: rotate(-90deg)
-    @include mediaQuery-down(md)
-      display: none
-  &_bottom
-    position: absolute
-    bottom: $yend
-    right: $xend
-    @include mediaQuery-down(md)
-      display: none
 
+.top
+  @include wf-ten-mincho()
+  &_abtxt
+    margin-top: 127px
+    color: $gray-txt
+    font-size: 14px
+  &_abbtn
+    margin-top: 58px
+    margin-right: auto
+    margin-left: auto
+  &_cmpttl
+    margin-top: 74px
+    text-align: center
+    color: $gray-txt
+  &_cmptxt
+    margin-top: 72px
+    color: $gray-txt
+    font-size: 14px
+    & td:nth-child(2n+1)
+      width: 133px
+  &_cmpbtn
+    margin-top: 115px
+    margin-right: auto
+    margin-left: auto
 </style>
