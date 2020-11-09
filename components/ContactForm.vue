@@ -2,9 +2,11 @@
   <form name="contact" method="POST" netlify>
     <input type="hidden" name="form-name" value="contact" />
     <table>
-      <tr><td>お名前</td><td><input type="text" name="name" placeholder="例）大川 健" /></td></tr>
-      <tr><td>メールアドレス</td><td><input type="email" name="email" placeholder="例）example@cc-soluna.com" /></td></tr>
-      <tr><td>お問い合わせ内容</td><td><textarea name="message" placeholder="例）お問い合わせ内容をご記入ください"></textarea></td></tr>
+      <tbody>
+        <tr><td>お名前</td><td><input type="text" name="name" placeholder="例）大川 健" /></td></tr>
+        <tr><td>メールアドレス</td><td><input type="email" name="email" placeholder="例）example@cc-soluna.com" /></td></tr>
+        <tr><td>お問い合わせ内容</td><td><textarea name="message" placeholder="例）お問い合わせ内容をご記入ください"></textarea></td></tr>
+      </tbody>
     </table>
     <p><input type="checkbox" name="checkbox" v-model="checked">お問い合わせ内容にお間違いなければ、左のボックスにチェックを入れ、送信してください</p>
     <button type="submit" :disabled="!checked">送信する</button>

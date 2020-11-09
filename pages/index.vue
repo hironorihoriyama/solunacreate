@@ -27,7 +27,6 @@ export default {
 <style lang="sass">
 @import '~assets/scss/_variable.scss';
 @import '~assets/scss/_mixin.scss';
-
 .cnt
   @include wf-ten-mincho()
   &_ttl
