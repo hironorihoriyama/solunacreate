@@ -2,11 +2,11 @@
   <footer class="ft">
     <div class="ft_wp">
       <ul class="ft_ls">
-        <li><nuxt-link to="/">HOME</nuxt-link></li>
-        <li><nuxt-link to="/about">ABOUT US</nuxt-link></li>
-        <li><nuxt-link to="/atelier">ATELIER</nuxt-link></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">ATELIER</a></li>
         <li><a href="#">COMPANY</a></li>
-        <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
+        <li><a href="#">CONTACT</a></li>
       </ul>
       <address class="ft_ad">奈良市宝来1-7-25 / 0742-55-8998</address>
       <p class="ft_c">©Soluna Create inc.</p>

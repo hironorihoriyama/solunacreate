@@ -6,11 +6,11 @@
     <div class="mnu_wp">
       <h1 class="mnu_ttl">SOLUNA CREATE</h1>
       <ul class="mnu_ls">
-        <li><nuxt-link to="/">HOME</nuxt-link></li>
-        <li><nuxt-link to="/about">ABOUT US</nuxt-link></li>
-        <li><nuxt-link to="/atelier">ATELIER</nuxt-link></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">ATELIER</a></li>
         <li><a href="#">COMPANY</a></li>
-        <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
+        <li><a href="#">CONTACT</a></li>
       </ul>
     </div>
   </div>
