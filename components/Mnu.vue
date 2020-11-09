@@ -1,7 +1,7 @@
 <template>
   <div
     class="mnu"
-    :class="{ 'mnu-top': top, 'mnu-ab': ab, 'mnu-atl': atl, 'mnu-cnt': cnt }"
+    :class="{ 'mnu-cnt': cnt }"
   >
     <div class="mnu_wp">
       <h1 class="mnu_ttl">SOLUNA CREATE</h1>
@@ -19,9 +19,6 @@
 <script>
 export default {
   props: {
-    top: { type: Boolean, default: false },
-    ab: { type: Boolean, default: false },
-    atl: { type: Boolean, default: false },
     cnt: { type: Boolean, default: false },
   },
 }
@@ -32,28 +29,6 @@ export default {
 @import '~assets/scss/_mixin.scss';
 .mnu
   width: 100%
-  &-top
-    height: 95px
-  &-ab
-    background-size: cover
-    background-position: center
-    background-image: url('~@/assets/img/ab_kv.jpg')
-    & .mnu_wp
-      position: relative
-      margin-right: auto
-      margin-left: auto
-      width: 71%
-      height: 640px
-  &-atl
-    background-size: cover
-    background-position: center
-    background-image: url('~@/assets/img/atl_kv.jpg')
-    & .mnu_wp
-      position: relative
-      margin-right: auto
-      margin-left: auto
-      width: 71%
-      height: 640px
   &-cnt .mnu_wp
     position: relative
     margin-right: auto
