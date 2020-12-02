@@ -4,12 +4,12 @@
     :class="{ 'mnu-cnt': cnt }"
   >
     <div class="mnu_wp">
-      <h1 class="mnu_ttl">SOLUNA CREATE</h1>
+      <h1 class="mnu_ttl"><img src="~/assets/img/soluna_logo.svg" alt="soluna_logo"></h1>
       <div class="mnu_btn_wp">
         <a
           class="mnu_btn"
           :class="{ active: tgl }"
-          @click="tgl=!tgl"
+          @click="tglBtn"
           href="#"
         >
           <span></span>
@@ -41,6 +41,12 @@ export default {
       tgl: false,
     }
   },
+  methods: {
+    tglBtn() {
+      event.preventDefault();
+      this.tgl = !this.tgl
+    }
+  }
 }
 </script>
 
@@ -64,8 +70,8 @@ export default {
     top: 81px
     text-align: center
     width: 100%
-    color: $white
-    @include wf-din()
+    & img
+      width: 286px
   &_btn, &_btn span
     display: inline-block
     transition: all .4s
@@ -89,23 +95,23 @@ export default {
       position: absolute
       left: 0
       width: 100%
-      height: 4px
+      height: 2px
       background-color: $gray-brd
       border-radius: 4px
       &:nth-of-type(1)
         top: 0
       &:nth-of-type(2)
-        top: 15px
+        top: 16px
       &:nth-of-type(3)
         bottom: 0
     &.active span:nth-of-type(1)
-      -webkit-transform: translateY(15px) rotate(-45deg)
-      transform: translateY(15px) rotate(-45deg)
+      -webkit-transform: translateY(16px) rotate(-45deg)
+      transform: translateY(16px) rotate(-45deg)
     &.active span:nth-of-type(2)
       opacity: 0
     &.active span:nth-of-type(3)
-      -webkit-transform: translateY(-15px) rotate(45deg)
-      transform: translateY(-15px) rotate(45deg)
+      -webkit-transform: translateY(-16px) rotate(45deg)
+      transform: translateY(-16px) rotate(45deg)
   &_ls
     writing-mode: vertical-rl
     list-style: none

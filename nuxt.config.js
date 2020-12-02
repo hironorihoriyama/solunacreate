@@ -14,21 +14,21 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'TOUN',
+    title: 'SOLUNA CREATE ソルナ・クリエイト株式会社',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'TOUN（トウン）は「New nostalgic」なスニーカーのブランドです。時代を経ても、どこか懐かしい、でも新しい。そんな靴づくりを目指しています。古くから革靴の産地であった奈良県中部エリア、TOUNのスニーカーは、その地でつくられています。日本で初めて都ができた奈良の地でデザインされ、つくられたTOUNのスニーカーは連綿と続く時の流れから学び、新しいものを生み出す「New nostalgic」がコンセプトです。' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'TOUN | 奈良のスニーカーブランド' },
+      { hid: 'description', name: 'description', content: '未来をつくる、本物をつくる。さまざまな対話の場を通じて自分の軸をもつお手伝いをします。企業向けのコンサルティングから個人コーチングまで、コミュニケーションをとおして課題を解決するお手伝いをしています。' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'SOLUNA CREATE ソルナ・クリエイト株式会社' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: 'https://toun-nara.jp' },
-      { hid: 'og:title', property: 'og:title', content: 'TOUN | 奈良のスニーカーブランド' },
-      { hid: 'og:description', property: 'og:description', content: 'TOUN（トウン）は「New nostalgic」なスニーカーのブランドです。時代を経ても、どこか懐かしい、でも新しい。そんな靴づくりを目指しています。古くから革靴の産地であった奈良県中部エリア、TOUNのスニーカーは、その地でつくられています。日本で初めて都ができた奈良の地でデザインされ、つくられたTOUNのスニーカーは連綿と続く時の流れから学び、新しいものを生み出す「New nostalgic」がコンセプトです。' },
-      { hid: 'og:image', property: 'og:image', content: 'https://toun-nara.jp/og.png"' },
+      { hid: 'og:url', property: 'og:url', content: 'http://cc-soluna.com' },
+      { hid: 'og:title', property: 'og:title', content: 'SOLUNA CREATE ソルナ・クリエイト株式会社' },
+      { hid: 'og:description', property: 'og:description', content: '未来をつくる、本物をつくる。さまざまな対話の場を通じて自分の軸をもつお手伝いをします。企業向けのコンサルティングから個人コーチングまで、コミュニケーションをとおして課題を解決するお手伝いをしています。' },
+      { hid: 'og:image', property: 'og:image', content: 'http://cc-soluna.com/og.jpg"' },
       { name: 'twitter:card', content: 'summary' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.gif' }
     ],
     script: [
       { src: 'https://use.typekit.net/lhf0nit.js'}
@@ -45,7 +45,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/vue-awesome-swiper'
+    '~/plugins/vue-awesome-swiper',
+    {src: '~plugins/ga.js', mode: 'client'}
   ],
   /*
   ** Auto import components
