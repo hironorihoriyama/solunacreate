@@ -71,7 +71,7 @@ export default {
     text-align: center
     width: 100%
     & img
-      width: 286px
+      width: 180px
   &_btn, &_btn span
     display: inline-block
     transition: all .4s
